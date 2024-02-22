@@ -1,61 +1,49 @@
-public class AccountTest(){
+public class AccountTest {
+    public static void main(String[] args) {
 
-	public static void main (String[] args){
+        Account myAccount = new Account("1234", 10000.0);
+        // set acct to active state
 
-         // Execute test methods
-        testAccountCreation();
-        testToString();
+        myAccount.activate();
+        // displays "Account is already activated!"
+
+        // Suspend the account
+        myAccount.suspend();
+        // displays "Account is suspended!"
+
+        // Activate the account
+        myAccount.activate();
+        // displays "Account is activated!"
+
+        // Deposit to the account
+        myAccount.deposit(1000.0);
+        // update balance and displays account number and
+        // current balance. Call the toString() method in deposit().
+
+        // Withdraw to the account
+        myAccount.withdraw(100.0);// update balance and displays account number and
+        // current balance. Call the toString() method in deposit().
+
+        // Close the account()
+        myAccount.close();
+
+        // Activate the account
+        myAccount.activate();
+        // Displays "You cannot activate a closed account!"
+
+        // Suspend the account
+        myAccount.suspend();
+        // Displays " You cannot suspend a closed account!"
+
+        // Withdraw to the account
+        myAccount.withdraw(500.0);
+        // Show message "You cannot withdraw on a closed account!". Call the toString()
+        // to show current balance and account number.
+
+        // Deposit to the account
+        myAccount.deposit(1000.0);
+        // Show message "You cannot deposit on closed
+        // account displays account!". Call the toString() to show current balance and
+        // account number.
     }
-
-
-      /*
-	 * Test methods 
-	 */
-	private static void testAccountCreation() {
-		System.out.println("-->testAccountCreation() ");
-		Account myAccount = new Account("1234", 10000.0); //set acct to active state
-        myAccount.activate(); // displays "Account is already activated!"
-		System.out.println(myAccount.getBalance());
-
-	}
-
-	private static void testToString() {
-		System.out.println("-->testToString()");
-		System.out.println("Account is activated!=" + myAccount);
-	}
-
-
-    //Deposit to the account
-    private static void testDeposit() {
-		System.out.println("-->testDeposit()");
-		Account myAccount  = new Account(1000.0);
-		myAccount.deposit(500.0);
-		System.out.println(myAccount.getBalance());
-	}
-
-	private static void testDepositWithNegativeAmount() {
-		System.out.println("-->testDepositWithNegativeAmount()");
-		Account myAccount  = new Account(1000.0);
-		myAccount.deposit(-500.0);
-		System.out.println(myAccount.getBalance());
-	}
-
-	private static void testMultipleDeposits() {
-		System.out.println("-->testMultipleDeposits()");
-		Account myAccount  = new Account(1000.0);
-		myAccount.deposit(500.0);
-		myAccount.deposit(300.0);
-		System.out.println(myAccount.getBalance());
-	}
-
-	private static void testWithdraw() {
-		System.out.println("You cannot deposit on closed");
-		Account myAccount  = new Account(1000.0);
-		myAccount.withdraw(600.0);
-		System.out.println(myAccount.getBalance());
-	}
-
-
-
 }
-
