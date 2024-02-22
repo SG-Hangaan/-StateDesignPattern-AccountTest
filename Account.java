@@ -1,74 +1,60 @@
-
 public class Account {
-	private double balance;
-	private String accountNumber;
+    private String accountNumber;
+    private Double balance;
+    private AccountState accountState;
 
-    public Account(String accountNumber, double balance) {
-		this.accountNumber = accountNumber;
-		this.balance = balance;
-	}
-
-   
-	public void setAccountNumber(String accountNumber) {
-		this.accountNumber = accountNumber;
-	}
-
-
-    //Getter used to retreive balance 
-    public double getBalance() {
-        return balance;
+    public Account(String accountNumber, Double balance) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        accountState = new ActiveState();
     }
 
+    @Override
+    public String toString() {
+        return "\nAccount Number: " + accountNumber + "\nBalance:" + balance + "\n";
+    }
+
+    public void deposit(Double depositAmount) {
+        accountState.deposit(depositAmount, this);
+    }
+
+    public void withdraw(Double withdrawAmount) {
+        accountState.withdraw(withdrawAmount, this);
+    }
+
+    public void suspend() {
+        accountState.suspend(this);
+    }
+
+    public void activate() {
+        accountState.activate(this);
+    }
+
+    public void close() {
+        accountState.close(this);
+    }
 
     public String getAccountNumber() {
         return accountNumber;
     }
 
-
     public void setAccountNumber(String accountNumber) {
-		this.accountNumber = accountNumber;
-	}
-
-
-    //Method used to increase balance amount
-    public void deposit(double amount) {
-        if(amount > 0) {
-            balance += amount;
-        }
-    }
-    // Decreases the balance by amount
-    public void withdraw(double amount) {
-        if(amount>0) {
-            balance -= amount;
-        }
+        this.accountNumber = accountNumber;
     }
 
-    //Getter used to active account
-    public double getActive() {
-        return active;
+    public Double getBalance() {
+        return balance;
     }
 
-
-    //Getter used to suspend
-    public double getSuspend() {
-        return suspend;
+    public void setBalance(Double balance) {
+        this.balance = balance;
     }
 
-    //Getter used to close
-    public double getClose() {
-        return close;
+    public AccountState getAccountState() {
+        return accountState;
     }
 
-
-
-    public void mergeAccount(Account myAccount) {
-		if(this.getAccountNumber().equals(myAccount.getAccountNumber())) {
-			this.balance += myAccount.getBalance();
-		}
-	}	
-	
-
-
-
+    public void setAccountState(AccountState accountState) {
+        this.accountState = accountState;
+    }
 }
-
