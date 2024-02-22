@@ -60,6 +60,7 @@ public class Account {
     }
 
 
+
     public void mergeAccount(Account myAccount) {
 		if(this.getAccountNumber().equals(myAccount.getAccountNumber())) {
 			this.balance += myAccount.getBalance();
