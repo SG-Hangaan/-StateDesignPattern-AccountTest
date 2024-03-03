@@ -1,6 +1,11 @@
 public class AccountTest {
     public static void main(String[] args) {
 
+        System.out.println("\n\t(============================== WELCOME TO ===============================)");
+        System.out.println("\t(============ Navigating States and Rules in a Banking System: ===========)");
+        System.out.println("\t======= Rules: Active Accounts, Suspended Accounts, Closed Accounts ======)");
+        System.out.println("\t---------------------------------------------------------------------------\n");
+
         Account myAccount = new Account("1234", 10000.0);
         
         myAccount.activate();
@@ -12,7 +17,7 @@ public class AccountTest {
         myAccount.activate();
         // "Account is activated!"
 
-        /
+        
         myAccount.deposit(1000.0);
         // update balance and displays account number and
         // current balance. Call the toString() method in deposit().
@@ -37,5 +42,16 @@ public class AccountTest {
         // "You cannot deposit on closed
         // account displays account!". Call the toString() to show current balance and
         // account number.
+
+
+        System.out.println("\n \t\t------------------> App Shuting Down <----------------\n");
+        System.out.println("\t    #==============================================================#");		
+        System.out.println("\t    |                2024 @ Sharon Grace T. Hangaan                |");
+        System.out.println("\t    |          Follow me in: https://github.com/SG-Hangaan         |");
+        System.out.println("\t    |               Email: sharonygracehangaan@gmail.com           |");
+        System.out.println("\t    #==============================================================#\n");	
     }
+
+
+
 }
