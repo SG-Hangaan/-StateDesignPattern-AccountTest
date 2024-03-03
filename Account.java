@@ -11,7 +11,7 @@ public class Account {
 
     @Override
     public String toString() {
-        return "\nAccount Number: " + accountNumber + "\nBalance:" + balance + "\n";
+        return "\n\tAccount Number: " + accountNumber + "\n\tBalance:" + balance + "\n";
     }
 
     public void deposit(Double depositAmount) {
